@@ -1,8 +1,19 @@
 #Using the ABP Chrome Extension, I have browsed through YouTube in October 2019 and added the blocked URLS to this 
 #DNS sink hole list. Generated using the Chrome Browser console logs and the ABP extension
+#The way that the blocklist is simple: It tells the Pi-Hole DNS server to look at the loopback address instead of the real server
+#The loopback address will serve nothing to the client because nothing is there. Hence the name sinkhole.
+#To load into your Pi-Hole, copy and paste the link to this list which is https://github.com/MillerTB/mtbPieHoleList/blob/master/youtubeAdsBlacklist
+#to your Pi-Hole's gravity. This can be found in the web portal of your pi-hole (enter the IP address or hostname of your Pi-Hole into a web browser)
+#Login using the password given to you on the last screen of the installation process
+#System > Blocklist > add this list
+
+
 127.0.0.1 localhost #IPv4 localhost
 ::1 localhost #IPv6 localhost
+
+
 #Youtube ABP Blocked URLS
+
 127.0.0.1 https://www.youtube.com/yts/jsbin/www-pagead-id-vflF6UF6X/www-pagead-id.js
 127.0.0.1 https://googleads.g.doubleclick.net/pagead/id
 127.0.0.1 https://www.youtube.com/get_midroll_info?ei=VaGpXfmPIsqOzLUP56KYgA0&m_pos=0&token=AFjjc2Nva6LlLmiYk8qmAldHn-uartjxOSyodfyg11kNQIE5F4BQuZaSTbfKdbnzqMghwlhhgjKPcs_-xlHVZ5TFnmuUSjDyEWaOsmLaKu3ePKH0OY8uenEQM5VAdC6OF1lJ_C35ghMyj8uoXqUn2R0mr7_DPVTy2MkhoDggahJd6ss1J43SLRS3tDdXnKs-3e3iFWwn8grj-5LzcKvPVvOymu07cMOArzfNT74EAj7F8jYcTdPT6dxtdtMWjwIgvhLT5jK6KXVoqGeZMvXBUxyUA8q7JEWcIAr2Gz9VQUUPkaUgErZsrnVHXv4O-7vBYWZEpXNO_Q4wvvUiInB3L2thBftd7fVGz9AaWLUbHJ2YQvKDPqYhMUfSJljRg95Jja0M9hVe9UOW&index=0&cpn=tmzLcpbW77K5Rvx9&lact=171&vis=0&ad_block=1&tsla=0&bid=ERR_BID&dt=1571397973652&flash=0&frm=0&ca_type=image&u_tz=-240&u_his=4&u_java=false&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=3&u_nmime=4&p_w=1280&p_h=720&c=WEB&cver=1.20191017.04.00
@@ -42,6 +53,7 @@
 127.0.0.1 https://www.google.com/uds/api/ads/1.0/d32a0e52793693b309891d5b5f7f6aa0/content.I.js
 127.0.0.1 https://www.google.com/uds/api/ads/1.0/d32a0e52793693b309891d5b5f7f6aa0/content.I.js
 127.0.0.1 https://googleads.g.doubleclick.net/pagead/id
+127.0.0.1 https://www.youtube.com/yts/jsbin/www-pagead-id-vflF6UF6X/www-pagead-id.js
 
 #Have not yet tested on my Pi-Hole network. This is still being tested. I just hope I never have to see another TikTok or Door Dash ad 
 #Ever Again
